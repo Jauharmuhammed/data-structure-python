@@ -40,17 +40,17 @@ class SinglyLinkedList:
         newNode.next = node.next
         node.next = newNode
 
-    # removin a node
+    # removing a node
     def remove(self, remove_item):
         val = self.head
-        if val is not None and val == remove_item:
+        if val is not None and val.data == remove_item:
             self.head = val.next
             val = None
             return
         while val is not None:
+            prev = val
             if val.data == remove_item:
                 break
-            prev = val
             val = val.next
         
         if val:
@@ -62,24 +62,25 @@ class SinglyLinkedList:
 
 # initialization
 list = SinglyLinkedList()
-list.head = Node(10)
-e2 = Node(20)
-e3 = Node(30)
+# list.head = Node(10)
+# e2 = Node(20)
+# e3 = Node(30)
 
-list.head.next = e2
-e2.next = e3
+# list.head.next = e2
+# e2.next = e3
 
 
 # insert at the beginning
 list.insertBeginning(5)
 list.insertBeginning(1)
+list.insertBeginning(20)
 
 # insert at the end
 list.insertEnd(100)
 list.insertEnd(200)
 
 # insert in between
-list.insertInBetween(e2, 25)
+# list.insertInBetween(e2, 25)
 
 # removing an item
 list.remove(20)
